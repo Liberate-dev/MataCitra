@@ -4,12 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MataCitra - Rumah Sakit Mata Specialist</title>
+  <meta name="description" content="MataCitra - Rumah sakit mata specialist dengan teknologi terkini dan tim dokter berpengalaman untuk kesehatan mata Anda.">
+
+  <!-- Preconnect for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://images.unsplash.com">
 
-  <!-- Optimized Lucide - only used icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Preload critical font -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@400;500;600&display=swap" crossorigin>
+
+  <!-- Fonts with font-display swap for faster render -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@400;500;600&display=swap&family=display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+  <!-- Preload hero image for LCP -->
+  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&q=80" fetchpriority="high">
+
+  <!-- Critical CSS inline for above-the-fold -->
+  <style>
+    /* Critical path CSS - loads immediately */
+    body { margin: 0; font-family: 'DM Sans', system-ui, sans-serif; background: #FCFAF7; }
+    .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 20px 60px; display: flex; justify-content: space-between; align-items: center; background: rgba(252, 250, 247, 0.9); backdrop-filter: blur(20px); }
+    .logo { display: flex; align-items: center; gap: 14px; text-decoration: none; color: #0B2B26; }
+    .logo-icon { width: 52px; height: 52px; background: linear-gradient(135deg, #0B2B26 0%, #1B4332 100%); border-radius: 14px; display: flex; align-items: center; justify-content: center; }
+    .logo-text { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; }
+    .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1.1fr; padding: 140px 60px 80px; gap: 80px; align-items: center; max-width: 1400px; margin: 0 auto; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(44px, 5vw, 68px); font-weight: 700; line-height: 1.1; color: #0B2B26; margin-bottom: 24px; }
+    .hero p { font-size: 20px; color: #636E72; line-height: 1.8; margin-bottom: 40px; }
+    .btn-primary { background: #0B2B26; color: #fff; padding: 18px 36px; border-radius: 14px; font-size: 17px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 12px; }
+    .hero-image-container { position: relative; width: 100%; max-width: 520px; }
+    .hero-main-image { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 20px; }
+    @media (max-width: 768px) { .nav { display: none; } .hero { grid-template-columns: 1fr; text-align: center; padding: 120px 24px 60px; } }
+  </style>
+
+  <!-- Full CSS inline below -->
+
+  <!-- Fallback noscript for CSS -->
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@400;500;600&display=swap">
+  </noscript>
+
+  <!-- Defer Lucide - only used icons replaced with inline SVG -->
+  <script defer src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 
   <style>
     /* ============ CSS VARIABLES ============ */
@@ -1747,7 +1783,7 @@
       <div class="doctors-grid">
         <div class="doctor-card reveal" style="transition-delay: 0.1s;">
           <div class="doctor-image-wrapper">
-            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=80" alt="Dr. Hendra Wijaya" class="doctor-image" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=80" alt="Dr. Hendra Wijaya" class="doctor-image" loading="lazy" decoding="async">
           </div>
           <div class="doctor-info">
             <div class="doctor-name">Dr. Hendra Wijaya, Sp.M</div>
@@ -1766,7 +1802,7 @@
         </div>
         <div class="doctor-card reveal" style="transition-delay: 0.2s;">
           <div class="doctor-image-wrapper">
-            <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=600&q=80" alt="Dr. Sari Dewi" class="doctor-image" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=600&q=80" alt="Dr. Sari Dewi" class="doctor-image" loading="lazy" decoding="async">
           </div>
           <div class="doctor-info">
             <div class="doctor-name">Dr. Sari Dewi, Sp.M</div>
@@ -1785,7 +1821,7 @@
         </div>
         <div class="doctor-card reveal" style="transition-delay: 0.3s;">
           <div class="doctor-image-wrapper">
-            <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=600&q=80" alt="Dr. Budi Santoso" class="doctor-image" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=600&q=80" alt="Dr. Budi Santoso" class="doctor-image" loading="lazy" decoding="async">
           </div>
           <div class="doctor-info">
             <div class="doctor-name">Dr. Budi Santoso, Sp.M</div>
@@ -1815,31 +1851,31 @@
     </div>
     <div class="gallery-grid">
       <div class="gallery-item large reveal">
-        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80" alt="Ruang operasi" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80" alt="Ruang operasi" loading="lazy" decoding="async">
         <div class="gallery-overlay">
           <div class="gallery-caption">Ruang Operasi Modern</div>
         </div>
       </div>
       <div class="gallery-item reveal">
-        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&q=80" alt="Peralatan diagnostik" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&q=80" alt="Peralatan diagnostik" loading="lazy" decoding="async">
         <div class="gallery-overlay">
           <div class="gallery-caption">Diagnostic Center</div>
         </div>
       </div>
       <div class="gallery-item reveal">
-        <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=400&q=80" alt="Ruang tunggu" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=400&q=80" alt="Ruang tunggu" loading="lazy" decoding="async">
         <div class="gallery-overlay">
           <div class="gallery-caption">Ruang Tunggu Nyaman</div>
         </div>
       </div>
       <div class="gallery-item reveal">
-        <img src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=400&q=80" alt="Peralatan mata" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=400&q=80" alt="Peralatan mata" loading="lazy" decoding="async">
         <div class="gallery-overlay">
           <div class="gallery-caption">Peralatan Canggih</div>
         </div>
       </div>
       <div class="gallery-item reveal">
-        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=400&q=80" alt="Konsultasi" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=400&q=80" alt="Konsultasi" loading="lazy" decoding="async">
         <div class="gallery-overlay">
           <div class="gallery-caption">Ruang Konsultasi</div>
         </div>
@@ -1905,7 +1941,7 @@
         <div class="testimonial-card reveal" style="transition-delay: 0.1s;">
           <div class="testimonial-text">"Sebelum operasi katarak, saya hampir tidak bisa melihat wajah cucu. Sekarang menonton mereka bermain dengan jernih. Terima kasih MataCitra — Anda mengembalikan segalanya."</div>
           <div class="testimonial-author">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80" alt="Bapak Hari" class="testimonial-avatar" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80" alt="Bapak Hari" class="testimonial-avatar" loading="lazy" decoding="async">
             <div>
               <div class="testimonial-name">Bapak Hari Susanto</div>
               <div class="testimonial-location">Pensiunan Guru, Jakarta Selatan</div>
@@ -1915,7 +1951,7 @@
         <div class="testimonial-card reveal" style="transition-delay: 0.2s;">
           <div class="testimonial-text">"Anak saya yang berusia 7 tahun menjalani operasi strabismus di sini. Dosenya sabar banget, hasilnya sempurna. Mata sudah lurus dan kepercayaan dirinya kembali."</div>
           <div class="testimonial-author">
-            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&q=80" alt="Ibu Ratna" class="testimonial-avatar" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&q=80" alt="Ibu Ratna" class="testimonial-avatar" loading="lazy" decoding="async">
             <div>
               <div class="testimonial-name">Ibu Ratna Dewi</div>
               <div class="testimonial-location">Wiraswasta, Bekasi</div>
@@ -1925,7 +1961,7 @@
         <div class="testimonial-card reveal" style="transition-delay: 0.3s;">
           <div class="testimonial-text">"Pasien glaukoma saya ditangani Dr. Sari dengan sangat detail. Pemeriksaan OCT-nya sangat thorough. Sekarang kondisinya terkontrol dan saya bisa tetap membaca buku favorit."</div>
           <div class="testimonial-author">
-            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&q=80" alt="Bapak Wijaya" class="testimonial-avatar" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&q=80" alt="Bapak Wijaya" class="testimonial-avatar" loading="lazy" decoding="async">
             <div>
               <div class="testimonial-name">Bapak Wijaya Prakoso</div>
               <div class="testimonial-location">Pensiunan Dosen, Bandung</div>
@@ -2065,80 +2101,109 @@
   </footer>
 
   <script>
-    // Initialize Lucide icons
-    lucide.createIcons();
-
-    // Scroll reveal animation with stagger
-    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
-
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-          // Add stagger delay based on siblings
-          const siblings = entry.target.parentElement.querySelectorAll('.reveal, .reveal-left, .reveal-right');
-          const siblingIndex = Array.from(siblings).indexOf(entry.target);
-
-          setTimeout(() => {
-            entry.target.classList.add('visible');
-          }, siblingIndex * 100);
-
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    });
-
-    revealElements.forEach(el => revealObserver.observe(el));
-
-    // Header scroll effect
-    const header = document.getElementById('header');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 100) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
+    // Initialize Lucide icons after DOM ready
+    document.addEventListener('DOMContentLoaded', function() {
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
       }
     });
 
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
+    // Scroll reveal animation with stagger - deferred
+    function initScrollReveal() {
+      const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const siblings = entry.target.parentElement.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+            const siblingIndex = Array.from(siblings).indexOf(entry.target);
+
+            setTimeout(() => {
+              entry.target.classList.add('visible');
+            }, siblingIndex * 100);
+
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
       });
-    });
 
-    // Parallax effect for hero elements
-    const parallaxElements = document.querySelectorAll('[data-parallax]');
-    let ticking = false;
-
-    function updateParallax() {
-      const scrollY = window.scrollY;
-      parallaxElements.forEach(el => {
-        const speed = parseFloat(el.dataset.parallax) || 0.05;
-        const rect = el.getBoundingClientRect();
-        const inView = rect.top < window.innerHeight && rect.bottom > 0;
-
-        if (inView) {
-          el.style.transform = `translateY(${scrollY * speed}px)`;
-        }
-      });
-      ticking = false;
+      revealElements.forEach(el => revealObserver.observe(el));
     }
 
-    window.addEventListener('scroll', () => {
-      if (!ticking) {
-        requestAnimationFrame(updateParallax);
-        ticking = true;
+    // Header scroll effect
+    function initHeaderScroll() {
+      const header = document.getElementById('header');
+      let ticking = false;
+
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            if (window.scrollY > 100) {
+              header.classList.add('scrolled');
+            } else {
+              header.classList.remove('scrolled');
+            }
+            ticking = false;
+          });
+          ticking = true;
+        }
+      });
+    }
+
+    // Smooth scroll for anchor links
+    function initSmoothScroll() {
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+    }
+
+    // Parallax effect for hero elements - mobile disabled
+    function initParallax() {
+      if (window.innerWidth < 768) return;
+
+      const parallaxElements = document.querySelectorAll('[data-parallax]');
+      let ticking = false;
+
+      function updateParallax() {
+        const scrollY = window.scrollY;
+        parallaxElements.forEach(el => {
+          const speed = parseFloat(el.dataset.parallax) || 0.05;
+          const rect = el.getBoundingClientRect();
+          const inView = rect.top < window.innerHeight && rect.bottom > 0;
+
+          if (inView) {
+            el.style.transform = `translateY(${scrollY * speed}px)`;
+          }
+        });
+        ticking = false;
       }
+
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          requestAnimationFrame(updateParallax);
+          ticking = true;
+        }
+      });
+    }
+
+    // Initialize all on load
+    window.addEventListener('load', () => {
+      initScrollReveal();
+      initHeaderScroll();
+      initSmoothScroll();
+      initParallax();
     });
   </script>
 </body>
